@@ -1,0 +1,452 @@
+
+
+.hero-section {
+  background-image: url(assets/img/fondo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.img-moto, .img-automovil, .img-suvjeep, .img-camioneta, .img-camionetaxl {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+}
+
+.video-container {
+  height: 70vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-gradient-black {
+  background: rgb(10, 10, 10);
+  background: linear-gradient(0deg, rgba(10, 10, 10, 0.98) 0%, rgba(10, 10, 10, 1) 100%);
+}
+
+/* Fonts */
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Estilos del botón de WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float .my-float {
+  margin-top: 16px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 6px #666;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.9);
+  box-shadow: 1px 1px 2px #333;
+}
+
+/* General navbar styles */
+.navbar {
+  background-color: #000000; /* Asegura que el fondo sea negro */
+  padding: 5px 20px; /* Reducir el padding general */
+  position: relative;
+  z-index: 2;
+  height: 60px; /* Ajusta la altura para hacer el navbar más pequeño */
+}
+
+
+/* Mostrar siempre los enlaces en el header */
+.navbar nav ul li a {
+  display: block;
+}
+
+
+
+
+/* GO y CLEAN */
+.go {
+  color: gray;
+}
+
+.clean {
+  color: red;
+}
+
+/* Ajusta el tamaño de fuente para hacerlo aún más grande */
+.fs-0 {
+  font-size: 6rem;
+}
+
+.fs-2 {
+  font-size: 3.5rem;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-animated {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.text-animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-style {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.video-style.visible {
+  opacity: 1;
+}
+
+/* Ajuste para centrar el contenido en la pantalla */
+.hero-section .d-flex {
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 0 10px; /* Añadir padding para evitar que el texto se salga del contenedor */
+}
+
+/* Eliminar el fondo oscuro (opaco) en móviles */
+.hero-section::before {
+  display: none; /* Elimina el efecto oscuro sobre el fondo en móviles */
+}
+
+/* Ajusta el tamaño de los textos */
+.fs-0 {
+  font-size: 4rem; /* Ajusta el tamaño en móviles */
+}
+
+.fs-2 {
+  font-size: 2.5rem; /* Ajusta el tamaño de "Detallado Automotriz" */
+}
+
+/* Reduce el margen inferior de los textos */
+.hero-section p {
+  margin-bottom: 10px; /* Espaciado entre los textos */
+}
+
+/* Eliminar márgenes que podrían afectar el centrado */
+.hero-section {
+  margin: 0 !important;
+}
+
+/* Estilo para la sección Hero */
+.hero-section {
+  background-color: #000; /* Agrega un fondo oscuro si lo necesitas */
+}
+
+/* Estilo específico para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .hero-section .container {
+    padding: 15px; /* Reducir el padding para que se ajuste bien */
+  }
+
+  .hero-section .d-flex {
+    flex-direction: column; /* Asegura que los elementos se acomoden verticalmente */
+    justify-content: center; /* Centra el contenido */
+  }
+
+  .hero-section p.text-white {
+    font-size: 1.5rem; /* Reducir el tamaño de fuente para que se vea bien en móvil */
+    margin-bottom: 10px; /* Ajusta los márgenes entre los párrafos */
+  }
+
+  .hero-section p.poppins-semibold.display-2 {
+    font-size: 2rem; /* Reducir tamaño de fuente para pantallas pequeñas */
+    margin-top: 10px;
+  }
+
+  /* Ajuste adicional para el span GO y CLEAN */
+  .hero-section .go, .hero-section .clean {
+    font-size: 2rem; /* Ajustar el tamaño de las palabras GO y CLEAN */
+    display: inline-block;
+  }
+}
+
+/* Estilo para el navbar en pantallas móviles */
+@media (max-width: 767px) {
+  /* Ajustes generales del navbar */
+  .navbar {
+    padding: 10px 20px; /* Añadir algo de padding para mejorar el espacio */
+    height: 155px; /* Reducir aún más la altura del navbar */
+  }
+
+  .navbar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos de manera horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben */
+    width: 100%;
+  }
+
+  .navbar nav ul li {
+    margin: 0 12px; /* Ajusta el margen entre los elementos horizontalmente */
+  }
+
+  .navbar nav ul li a {
+ 
+    text-decoration: none;
+    font-size: 1rem; /* Ajusta el tamaño de los enlaces */
+    font-weight: 600; /* Hacer los enlaces más prominentes */
+  }
+
+  /* Si los elementos no caben horizontalmente, el flex-wrap permite que se acomoden en una nueva línea */
+  .navbar nav ul li a {
+    display: block;
+    text-align: center;
+  }
+
+  /* Estilo para el botón de menú hamburguesa si fuera necesario */
+  .menu-toggle {
+    display: none; /* No mostrar el menú hamburguesa en este caso */
+  }
+}
+
+/* Eliminar márgenes y padding de todo el contenido */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Asegura que el fondo sea transparente */
+}
+.principal {
+  background-color: transparent; /* Asegura que el fondo sea transparente */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+/* Estilo para los videos */
+.video-style {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media query para pantallas móviles */
+@media (max-width: 768px) {
+  .row {
+    display: flex; /* Usamos flexbox para alinear elementos lado a lado */
+    flex-wrap: wrap; /* Permite que los elementos envuelvan y se ajusten */
+    justify-content: space-between; /* Deja espacio entre los elementos */
+    align-items: stretch; /* Asegura que ambos contenedores tengan el mismo tamaño */
+  }
+
+  .col-md-6 {
+    width: 48%; /* Ajusta el ancho para que los contenedores estén uno al lado del otro */
+    display: flex;
+    flex: 1; /* Hace que todos los contenedores tengan la misma altura */
+    flex-direction: column;
+    margin-bottom: 20px; /* Espacio entre filas */
+  }
+
+  /* Cambiar la posición de los elementos para las filas impares */
+  .row:nth-child(odd) .col-md-6:first-child {
+    order: 1; /* El video se mueve a la derecha */
+  }
+
+  .row:nth-child(odd) .col-md-6:last-child {
+    order: 0; /* El texto se mueve a la izquierda */
+  }
+
+  /* Para las filas pares */
+  .row:nth-child(even) .col-md-6:first-child {
+    order: 0; /* El texto se mueve a la izquierda */
+  }
+
+  .row:nth-child(even) .col-md-6:last-child {
+    order: 1; /* El video se mueve a la derecha */
+  }
+
+  /* Especificar los cambios en las filas 2 y 4 */
+  .row:nth-child(2) .col-md-6:first-child {
+    order: 1; /* El texto 2 va a la derecha */
+  }
+
+  .row:nth-child(2) .col-md-6:last-child {
+    order: 0; /* El video 2 va a la izquierda */
+  }
+
+  .row:nth-child(4) .col-md-6:first-child {
+    order: 1; /* El texto 4 va a la derecha */
+  }
+
+  .row:nth-child(4) .col-md-6:last-child {
+    order: 0; /* El video 4 va a la izquierda */
+  }
+
+  /* Asegura que el texto se ajuste bien */
+  .text-white {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Opcional: Ajustar el tamaño de los textos en móviles */
+  .display-4 {
+    font-size: 1.5rem; /* Reduce el tamaño de fuente en móviles */
+  }
+
+  /* Ajuste de los videos para que también ocupen todo el espacio */
+  .video-style {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Agregar margen superior entre la sección de Servicios y la de Precios */
+#precios {
+    margin-top: 10px; /* Puedes ajustar el valor a lo que prefieras */
+}
+
+
+
+
+
+
+
+
+
+/* Media query para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  /* Ajuste de los videos para PC */
+  .video-container {
+    height: 50vh; /* Reducir el tamaño de los videos en pantallas grandes */
+  }
+
+  .video-style {
+    height: 50vh; /* Ajustar también la altura de los videos dentro de .video-style */
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Media query para pantallas móviles */
+@media (max-width: 767px) {
+  /* Eliminar cualquier cambio no deseado en el navbar para móviles */
+  .navbar {
+    padding: 5px 20px; /* Mantener el padding original */
+    height: 60px; /* Mantener la altura original del navbar */
+  }
+
+  .navbar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .navbar nav ul li {
+    margin: 0 12px;
+  }
+
+  .navbar nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .navbar nav ul li a {
+    display: block;
+    text-align: center;
+  }
+
+  /* No hacer modificaciones adicionales en el navbar */
+}
+
+
+
+
+
+
+
+
+
+
+
+
