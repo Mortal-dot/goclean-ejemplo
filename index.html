@@ -122,6 +122,58 @@
                 <p class="display-4 poppins-regular">Lavado Super Premium</p>
             </div>
         </div>
+
+        <div class="row">
+            <!-- Fila 2: Precio primero, luego video -->
+            <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
+                <p class="display-4 poppins-regular">Tratamiento Cerámico</p>
+            </div>
+            <div class="col-md-6">
+                <video autoplay muted loop class="video-style" loading="lazy">
+                    <source src="video/carro2.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Fila 3: Video primero, luego precio -->
+            <div class="col-md-6">
+                <video autoplay muted loop class="video-style" loading="lazy">
+                    <source src="video/carro3.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+            <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
+                <p class="display-4 poppins-regular">Lavado Super Premium</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Fila 4: Precio primero, luego video -->
+            <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
+                <p class="display-4 poppins-regular">Limpieza de Tapicería</p>
+            </div>
+            <div class="col-md-6">
+                <video autoplay muted loop class="video-style" loading="lazy">
+                    <source src="video/carro4.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Fila 5: Video primero, luego precio -->
+            <div class="col-md-6">
+                <video autoplay muted loop class="video-style" loading="lazy">
+                    <source src="video/carro5.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+            <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
+                <p class="display-4 poppins-regular">Entre Otros Servicios</p>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -147,23 +199,41 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // Ocultar el preloader cuando todo esté cargado
+        // JavaScript para ocultar el preloader después de que la página esté lista
         window.onload = function() {
             const preloader = document.getElementById("preloader");
-            preloader.style.opacity = 0; // Hacerlo invisible
-            setTimeout(function() {
-                preloader.style.display = "none"; // Después de un tiempo, lo ocultamos
-            }, 500); // Retardo de 500ms para que la transición de opacidad sea visible
+            preloader.style.display = "none"; // Oculta el preloader
         };
 
-        // Optimización de carga para móviles: esconder el preloader rápidamente
-        if (window.innerWidth <= 768) {
-            window.onload = function() {
-                const preloader = document.getElementById("preloader");
-                preloader.style.display = "none"; // Ocultar directamente en móviles
-            };
-        }
-    </script>
+        const scrollButton = document.getElementById('scrollButton');
 
+        function toggleButton() {
+            if (window.scrollY >= document.documentElement.scrollHeight / 2) {
+                scrollButton.classList.add('show-button');
+            } else {
+                scrollButton.classList.remove('show-button');
+            }
+        }
+
+        window.addEventListener('scroll', toggleButton);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5 
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.text-animated, .video-style');
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
