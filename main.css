@@ -610,10 +610,13 @@ body {
 .hero-section .logo {
     max-width: 150px;
     border-radius: 50%;
+    max-height: 150px;
 }
 
 .hero-section p {
     color: white;
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
 
 /* Sección de Precios */
@@ -625,6 +628,18 @@ body {
 
 .bg-gradient-black {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+}
+
+/* Estilo de texto centrado para las secciones de precios */
+.text-animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
@@ -656,14 +671,69 @@ footer .fs-4 {
     color: white;
 }
 
-/* Animación al cargar contenido */
-.text-animated.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* Estilo para el contenido de las secciones */
+.poppins-regular {
+    font-family: 'Poppins', sans-serif;
 }
 
-.text-animated {
-    opacity: 0;
-    transform: translateY(30px);
+.poppins-semibold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.fs-0 {
+    font-size: 1rem;
+}
+
+.fs-2 {
+    font-size: 2.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.fs-5 {
+    font-size: 1.25rem;
+}
+
+/* Estilo del fondo del Hero */
+.hero-section {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Sección de Precios - Estilos adicionales */
+.row {
+    margin-bottom: 40px;
+}
+
+/* Estilo para la imagen y videos de la sección Precios */
+.col-md-6 {
+    padding: 0;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
