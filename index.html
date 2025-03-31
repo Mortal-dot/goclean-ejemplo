@@ -21,20 +21,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Agregar aquí el CSS para prevenir el desplazamiento horizontal -->
+    <!-- Prevenir desplazamiento horizontal -->
     <style>
-        /* Prevenir desplazamiento horizontal */
         html, body {
             overflow-x: hidden;
             width: 100%;
         }
-
-        /* Para asegurarnos de que todo el contenido esté contenido */
         * {
             box-sizing: border-box;
         }
-
-        /* En caso de que haya algún margen o padding innecesario */
         body {
             margin: 0;
             padding: 0;
@@ -42,6 +37,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Preloader (cargador) -->
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
 
     <section class="principal">
         <header class="navbar">
@@ -53,28 +53,24 @@
                 </ul>
             </nav>
         </header>
-          </section>
-    
-    
-<!-- Sección Hero -->
-<div class="hero-section">
-    <div class="container">
-        <div class="d-flex flex-lg-column justify-content-center text-center py-5">
-            <p class="text-white fs-0">
-                     <img src="logo.jpeg" alt="Logo" class="logo">
-            </p>
-            <p class="text-white fs-2 detallado-automotriz">
-                Detallado Automotriz
-            </p>
-            <p class="poppins-semibold display-2 text-white lavado-automoviles">Lavado de Automóviles</p>
+    </section>
+
+    <!-- Sección Hero -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="d-flex flex-lg-column justify-content-center text-center py-5">
+                <p class="text-white fs-0">
+                    <img src="logo.jpeg" alt="Logo" class="logo">
+                </p>
+                <p class="text-white fs-2 detallado-automotriz">
+                    Detallado Automotriz
+                </p>
+                <p class="poppins-semibold display-2 text-white lavado-automoviles">Lavado de Automóviles</p>
+            </div>
         </div>
     </div>
-</div>
 
-
-
-
- <!-- Sección de Servicios -->
+    <!-- Sección de Servicios -->
     <div class="container-fluid poppins-regular">
         <div class="row bg-black text-white py-5" id="servicios">
             <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
@@ -174,6 +170,12 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // JavaScript para ocultar el preloader después de que la página esté lista
+        window.onload = function() {
+            const preloader = document.getElementById("preloader");
+            preloader.style.display = "none"; // Oculta el preloader
+        };
+
         const scrollButton = document.getElementById('scrollButton');
 
         function toggleButton() {
@@ -187,32 +189,22 @@
         window.addEventListener('scroll', toggleButton);
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Crear un observador para detectar cuando los elementos están visibles en la pantalla
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Cuando el elemento es visible, se le agrega la clase 'visible'
                         entry.target.classList.add('visible');
-                        // Desactiva el observador para este elemento (solo se ejecuta una vez)
                         observer.unobserve(entry.target);
                     }
                 });
             }, {
-                threshold: 0.5 // 50% del elemento debe ser visible para activar la animación
+                threshold: 0.5 
             });
 
-            // Seleccionar todos los elementos con la clase 'text-animated' y 'video-style'
             const elementsToAnimate = document.querySelectorAll('.text-animated, .video-style');
-
-            // Observar cada elemento
             elementsToAnimate.forEach(element => {
                 observer.observe(element);
             });
         });
-
-
-        
-</script>
-
+    </script>
 </body>
 </html>
