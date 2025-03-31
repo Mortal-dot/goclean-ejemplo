@@ -449,4 +449,67 @@ html, body {
 
 
 
+.text-white {
+  color: white;
+}
+
+
+
+.logo {
+  width: 300px; /* Ajusta el tamaño del logo */
+  height: 200px; /* Mantén la proporción del logo */
+  margin-left: 10px; /* Espacio al lado del logo */
+  vertical-align: middle; /* Alineación vertical */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto de flotación, borde brillante y sombra oscura externa cuando el mouse pasa sobre el logo */
+.logo:hover {
+  transform: translateY(-12px); /* Mueve la imagen más hacia arriba */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.8); /* Sombra más oscura y más intensa */
+  border: 3px solid #1e477c; /* Borde brillante */
+}
+
+/* Efecto cuando el mouse no está sobre el logo */
+.logo:active {
+  transform: translateY(0); /* Resetea el efecto flotante cuando se hace clic */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+  border: 3px solid transparent; /* Sin borde brillante */
+}
+
+/* Optimización para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .logo {
+      width: 150px; /* Reducir el tamaño del logo en pantallas pequeñas */
+      height: 100px; /* Mantener la proporción del logo */
+  }
+
+  .fs-0 {
+      font-size: 1.2rem; /* Reducir el tamaño del texto si es necesario */
+  }
+
+  .logo:hover {
+      transform: translateY(-6px); /* Reducir el efecto de flotación para no ocupar mucho espacio */
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.7); /* Sombra más fuerte */
+  }
+}
+
+/* Optimización para pantallas muy pequeñas (por ejemplo, móviles en modo retrato) */
+@media (max-width: 480px) {
+  .logo {
+      width: 120px; /* Aún más pequeño en pantallas muy pequeñas */
+      height: 80px; /* Mantener proporción */
+  }
+
+  .fs-0 {
+      font-size: 1rem; /* Reducir aún más el tamaño de la fuente */
+  }
+
+  .logo:hover {
+      transform: translateY(-4px); /* Reducir aún más el efecto de flotación */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.6); /* Sombra más fuerte */
+  }
+}
 
