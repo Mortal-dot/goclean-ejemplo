@@ -528,11 +528,6 @@ html, body {
 
 
 
-/* General Reset */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
 
 * {
     box-sizing: border-box;
@@ -600,42 +595,16 @@ body {
     color: #f1f1f1;
 }
 
-/* Hero Section */
-.hero-section {
-    background-color: #1e477c;
-    padding: 50px 0;
-    text-align: center;
-}
 
-.hero-section .logo {
-    max-width: 150px;
-    border-radius: 50%;
-    max-height: 150px;
-}
 
-.hero-section p {
-    color: white;
-    font-size: 1.5rem;
-    margin-top: 20px;
-}
 
-/* Sección de Precios */
-.video-style {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
+
 
 .bg-gradient-black {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
 }
 
-/* Estilo de texto centrado para las secciones de precios */
-.text-animated {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+
 
 .text-animated.visible {
     opacity: 1;
@@ -654,22 +623,7 @@ footer .fs-4 {
     font-size: 1.5rem;
 }
 
-/* WhatsApp Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
 
-.whatsapp-float .my-float {
-    font-size: 30px;
-    color: white;
-}
 
 /* Estilo para el contenido de las secciones */
 .poppins-regular {
@@ -710,30 +664,7 @@ footer .fs-4 {
     font-size: 1.25rem;
 }
 
-/* Estilo del fondo del Hero */
-.hero-section {
-    background-image: url('hero-image.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
 
-/* Sección de Precios - Estilos adicionales */
-.row {
-    margin-bottom: 40px;
-}
 
-/* Estilo para la imagen y videos de la sección Precios */
-.col-md-6 {
-    padding: 0;
-}
 
-video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+
