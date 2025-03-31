@@ -830,6 +830,21 @@ footer a {
 
 
 
+/* General Reset */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* Estilo para el preloader */
 #preloader {
     position: fixed;
@@ -842,6 +857,7 @@ footer a {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    transition: opacity 0.5s ease-out; /* Suaviza la desaparición */
 }
 
 .spinner {
@@ -853,8 +869,103 @@ footer a {
     animation: spin 1s linear infinite; /* Animación de giro */
 }
 
-/* Animación para hacer girar el cargador */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Estilo para la sección principal */
+.navbar {
+    background-color: #1e477c;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #f1f1f1;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #1e477c;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-section .logo {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.hero-section p {
+    color: white;
+}
+
+/* Sección de Precios */
+.video-style {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-gradient-black {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+}
+
+/* Footer */
+footer {
+    background-color: #1e477c;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .fs-4 {
+    font-size: 1.5rem;
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.whatsapp-float .my-float {
+    font-size: 30px;
+    color: white;
+}
+
+/* Animación al cargar contenido */
+.text-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-animated {
+    opacity: 0;
+    transform: translateY(30px);
 }
