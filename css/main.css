@@ -813,6 +813,10 @@ footer a {
 
 
 
+.icon {
+    font-size: 24px; /* Tamaño del ícono */
+    color: #4CAF50; /* Color verde típico de los íconos de Waze */
+}
 
 
 
