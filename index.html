@@ -21,54 +21,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Prevenir desplazamiento horizontal -->
     <style>
+        /* Prevenir desplazamiento horizontal */
         html, body {
             overflow-x: hidden;
             width: 100%;
         }
+
+        /* Para asegurarnos de que todo el contenido esté contenido */
         * {
             box-sizing: border-box;
         }
+
+        /* En caso de que haya algún margen o padding innecesario */
         body {
             margin: 0;
             padding: 0;
-        }
-
-        /* Estilo para el preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out; /* Suaviza la desaparición */
-        }
-
-        .spinner {
-            border: 8px solid #f3f3f3; /* Color de fondo */
-            border-top: 8px solid #3498db; /* Color del spinner */
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite; /* Animación de giro */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Preloader (cargador) -->
-    <div id="preloader" class="preloader">
+    <!-- Preloader -->
+    <div id="preloader">
         <div class="spinner"></div>
     </div>
 
@@ -89,7 +64,7 @@
         <div class="container">
             <div class="d-flex flex-lg-column justify-content-center text-center py-5">
                 <p class="text-white fs-0">
-                    <img src="logo.jpeg" alt="Logo" class="logo" loading="lazy">
+                    <img src="logo.jpeg" alt="Logo" class="logo">
                 </p>
                 <p class="text-white fs-2 detallado-automotriz">
                     Detallado Automotriz
@@ -111,9 +86,8 @@
     <!-- Sección de Precios -->
     <div class="container-fluid">
         <div class="row" id="precios">
-            <!-- Fila 1: Video primero, luego precio -->
             <div class="col-md-6">
-                <video autoplay muted loop class="video-style" loading="lazy">
+                <video autoplay muted loop class="video-style">
                     <source src="video/carro1.mp4" type="video/mp4">
                     Tu navegador no soporta este formato de video.
                 </video>
@@ -124,12 +98,11 @@
         </div>
 
         <div class="row">
-            <!-- Fila 2: Precio primero, luego video -->
             <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
                 <p class="display-4 poppins-regular">Tratamiento Cerámico</p>
             </div>
             <div class="col-md-6">
-                <video autoplay muted loop class="video-style" loading="lazy">
+                <video autoplay muted loop class="video-style">
                     <source src="video/carro2.mp4" type="video/mp4">
                     Tu navegador no soporta este formato de video.
                 </video>
@@ -137,9 +110,8 @@
         </div>
 
         <div class="row">
-            <!-- Fila 3: Video primero, luego precio -->
             <div class="col-md-6">
-                <video autoplay muted loop class="video-style" loading="lazy">
+                <video autoplay muted loop class="video-style">
                     <source src="video/carro3.mp4" type="video/mp4">
                     Tu navegador no soporta este formato de video.
                 </video>
@@ -150,12 +122,11 @@
         </div>
 
         <div class="row">
-            <!-- Fila 4: Precio primero, luego video -->
             <div class="text-white text-center py-5 col-md-6 bg-gradient-black d-flex flex-column justify-content-center align-items-center text-animated">
                 <p class="display-4 poppins-regular">Limpieza de Tapicería</p>
             </div>
             <div class="col-md-6">
-                <video autoplay muted loop class="video-style" loading="lazy">
+                <video autoplay muted loop class="video-style">
                     <source src="video/carro4.mp4" type="video/mp4">
                     Tu navegador no soporta este formato de video.
                 </video>
@@ -163,9 +134,8 @@
         </div>
 
         <div class="row">
-            <!-- Fila 5: Video primero, luego precio -->
             <div class="col-md-6">
-                <video autoplay muted loop class="video-style" loading="lazy">
+                <video autoplay muted loop class="video-style">
                     <source src="video/carro5.mp4" type="video/mp4">
                     Tu navegador no soporta este formato de video.
                 </video>
@@ -194,12 +164,7 @@
     </a>
 
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
     <script>
-        // JavaScript para ocultar el preloader después de que la página esté lista
         window.onload = function() {
             const preloader = document.getElementById("preloader");
             preloader.style.display = "none"; // Oculta el preloader
@@ -226,7 +191,7 @@
                     }
                 });
             }, {
-                threshold: 0.5 
+                threshold: 0.5
             });
 
             const elementsToAnimate = document.querySelectorAll('.text-animated, .video-style');
@@ -235,5 +200,6 @@
             });
         });
     </script>
+
 </body>
 </html>
